@@ -26,6 +26,9 @@ public class Producto {
     private Double precio;
 
     @Column(nullable = false)
+    private Integer stock; // <- Campo agregado para el control de inventario de los pedidos
+
+    @Column(nullable = false)
     private Boolean disponible = true;
 
     // Relación: Muchos productos pertenecen a una sola categoría
