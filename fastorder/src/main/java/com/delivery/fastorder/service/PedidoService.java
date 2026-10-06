@@ -30,7 +30,7 @@ public class PedidoService {
 
     @Transactional
     public Pedido crearPedido(String emailCliente, PedidoRequestDto requestDto) {
-        Usuario cliente = usuarioRepository.findByEmail(emailCliente)
+        Usuario cliente = usuarioRepository.findByCorreo(emailCliente)
                 .orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
 
         Pedido pedido = new Pedido();
@@ -75,7 +75,7 @@ public class PedidoService {
     }
 
     public List<Pedido> obtenerPedidosPorCliente(String emailCliente) {
-        Usuario cliente = usuarioRepository.findByEmail(emailCliente)
+        Usuario cliente = usuarioRepository.findByCorreo(emailCliente)
                 .orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
         return pedidoRepository.findByCliente(cliente);
     }
