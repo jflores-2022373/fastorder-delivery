@@ -1,8 +1,8 @@
--- Inserción de usuarios iniciales (Contraseñas cifradas con BCrypt)
--- ADMIN: admin@fastorder.com / Admin123*
--- REPARTIDOR: repartidor@fastorder.com / Repartidor123*
--- CLIENTE: cliente@fastorder.com / Cliente123*
+-- Limpiar tablas antes de insertar para evitar duplicados (el orden importa por las llaves foráneas si las hubiera)
+TRUNCATE TABLE categorias RESTART IDENTITY CASCADE;
+TRUNCATE TABLE usuarios RESTART IDENTITY CASCADE;
 
+-- Inserción de usuarios iniciales (Contraseñas cifradas con BCrypt)
 INSERT INTO usuarios (nombre, apellido, correo, password, telefono, rol)
 VALUES ('Administrador', 'Sistema', 'admin@fastorder.com', '$2a$10$XmQ8K8G6t2Q8K8G6t2Q8Ke8K8G6t2Q8K8G6t2Q8K8G6t2Q8K8G6t2', '55551111', 'ADMIN');
 
