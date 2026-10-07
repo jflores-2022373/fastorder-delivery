@@ -1,22 +1,22 @@
-FastOrder Delivery API
+# FastOrder Delivery API
+
 API REST desarrollada con Spring Boot para la gestion integral de un sistema de delivery, abarcando la administracion de pedidos, comercios, productos y control de acceso basado en roles.
 
-Descripcion General
+## Descripcion General
+
 El sistema esta construido bajo una arquitectura modular en capas, permitiendo la gestion segura de usuarios mediante autenticacion basada en JSON Web Tokens (JWT). Cuenta con flujos diferenciados para administradores y clientes, garantizando la integridad de las operaciones de inventario, creacion de establecimientos y procesamiento de ordenes de compra.
 
-Componentes del Sistema
-Autenticacion y seguridad mediante tokens JWT y control de acceso por roles (ADMIN y CLIENTE).
+## Componentes del Sistema
 
-Administracion de comercios y catalogos de establecimientos.
+* Autenticacion y seguridad mediante tokens JWT y control de acceso por roles (ADMIN y CLIENTE).
+* Administracion de comercios y catalogos de establecimientos.
+* Control de inventario, precios y asociacion de productos.
+* Procesamiento de pedidos con validacion de existencia y stock.
+* Automatizacion de pruebas funcionales y de estres mediante scripts en Bash.
 
-Control de inventario, precios y asociacion de productos.
+## Estructura del Proyecto
 
-Procesamiento de pedidos con validacion de existencia y stock.
-
-Automatizacion de pruebas funcionales y de estres mediante scripts en Bash.
-
-Estructura del Proyecto
-Plaintext
+```text
 com.delivery.fastorder/
 ├── controller/     # Controladores REST para endpoints de autenticacion, comercios, productos y pedidos
 ├── service/        # Logica de negocio y validaciones operativas
