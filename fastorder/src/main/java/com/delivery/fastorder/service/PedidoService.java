@@ -50,7 +50,7 @@ public class PedidoService {
                 throw new RuntimeException("Stock insuficiente para el producto: " + producto.getNombre());
             }
 
-            // Descontar stock
+            // Descontar stock (Corregido)
             producto.setStock(producto.getStock() - itemDto.getCantidad());
             productoRepository.save(producto);
 
@@ -60,6 +60,8 @@ public class PedidoService {
             detalle.setProducto(producto);
             detalle.setCantidad(itemDto.getCantidad());
             detalle.setPrecioUnitario(producto.getPrecio());
+
+            // Subtotal del item (Corregido)
             double subtotalItem = producto.getPrecio() * itemDto.getCantidad();
             detalle.setSubtotal(subtotalItem);
 
